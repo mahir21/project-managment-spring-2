@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,8 +16,8 @@ import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-
+   
+@Entity
 	public class Project {
 
 		@Id
@@ -27,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 		
 		private String stage; // NOTSTARTED, COMPLETED, INPROGRESS
 		
-		private String description1;
+		private String description;
 		
 		
 		
@@ -43,9 +44,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 		
 		this.name = name;
 		this.stage = stage;
-		this.description1 = description;
+		this.description = description;
 	}
-	private String description;
+	
 
 
 	public long getProjectID() {
@@ -67,10 +68,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 		this.stage = stage;
 	}
 	public String getDescription() {
-		return description1;
+		return description;
 	}
 	public void setDescription(String description) {
-		this.description1 = description;
+		this.description = description;
 	}
 
 	//How To Modify method addEmployee in the project
