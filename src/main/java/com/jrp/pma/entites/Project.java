@@ -31,8 +31,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 		
 		private String description;
 		//Many Side Of the relationship will have a join Column To Indicate What Will Be The Foreign Key
-		@OneToMany(mappedBy = "theProject")
-		@JoinColumn(name = "Employee_ID")
+		@ManyToMany(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST},
+				fetch = FetchType.LAZY)
 		private List<Employee> employee;
 		
 		
