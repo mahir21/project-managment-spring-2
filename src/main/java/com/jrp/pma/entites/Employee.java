@@ -18,9 +18,9 @@ public class Employee {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long employeeID;
+	private long employee_id;
 	
-	private String firstName;
+	private String first_name;
 	
 	@ManyToMany(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST},
 			fetch = FetchType.LAZY)
@@ -30,7 +30,7 @@ public class Employee {
 	 )
 	
 	
-	private List<Project>  theProject;
+	private List<Project> theProject;
 	
 	
 	
@@ -38,26 +38,26 @@ public class Employee {
 	{
 		
 	}
-	public Employee(long employeeID, String firstName, String lastName, String email) {
+	public Employee(long employee_id, String first_name, String last_name, String email) {
 		super();
-		this.employeeID = employeeID;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.employee_id = employee_id;
+		this.first_name = first_name;
+		this.last_name = last_name;
 		this.email = email;
 	}
-	private String lastName;
+	private String last_name;
 	private String email;
 	public String getFirstName() {
-		return firstName;
+		return first_name;
 	}
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.first_name = firstName;
 	}
 	public String getLastName() {
-		return lastName;
+		return last_name;
 	}
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.last_name = lastName;
 	}
 	public String getEmail() {
 		return email;
