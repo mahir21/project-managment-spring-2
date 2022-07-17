@@ -19,26 +19,25 @@ public class HomeController {
 	
 	@Autowired
 	EmployeeRepository empRepo;
-	
 	//Mapping will initialize the home value
 	@RequestMapping("/home")
 	public String displayHome(Model model)
 	{   
-		//List will store all the project values
+		//5List will store all the project values
 		//Need To Store Project Object type values in list
 		
 		//We are querying the database for projects
 		
 		List<Project> listAll = proRepo.findAll();
 		//sending the values to thymleaf
-		model.addAttribute(listAll);
+		model.addAttribute("projectList",listAll);
 		//return home
 		
 		//We are querying the database for employees
 		
 		//Creating mapping for employee list project values
 		List<Employee> listE = empRepo.findAll();
-		model.addAttribute(listE);
+		model.addAttribute("employeeList",listE);
 		return "home/home";
 	}
 }

@@ -12,8 +12,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+
+/*
+ 
+ jdbc:mysql://127.0.0.1:3306/managment
+ */
 @Entity
+@Table(name = "employee")
 public class Employee {
 
 	@Id
@@ -24,7 +31,7 @@ public class Employee {
 	
 	@ManyToMany(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.PERSIST},
 			fetch = FetchType.LAZY)
-	@JoinTable(name="project_employee", 
+	@JoinTable(name="project_employee3", 
 	 joinColumns =@JoinColumn(name = "employee_id"),
 	 inverseJoinColumns = @JoinColumn(name = "project_id")
 	 )
